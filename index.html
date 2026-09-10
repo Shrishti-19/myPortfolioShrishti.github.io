@@ -297,9 +297,10 @@
             color: var(--text-secondary);
         }
 
+        /* Updated Skills Container */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
@@ -310,15 +311,19 @@
             border-radius: 10px;
             border-left: 3px solid var(--primary-color);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
         }
 
         .skill-category h4 {
             margin-bottom: 15px;
             color: var(--primary-color);
+            font-size: 1.1rem;
         }
 
         .skill-list {
             list-style: none;
+            flex-grow: 1;
         }
 
         .skill-list li {
@@ -326,6 +331,7 @@
             color: var(--text-secondary);
             position: relative;
             padding-left: 20px;
+            font-size: 0.9rem;
         }
 
         .skill-list li::before {
@@ -430,6 +436,8 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -441,6 +449,10 @@
             height: 200px;
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e1e2f;
         }
 
         .project-image::before {
@@ -461,12 +473,22 @@
             transition: transform 0.5s;
         }
 
+        /* Special fix for logos and feature graphics to not be cropped */
+        .project-image.logo-image img {
+            object-fit: contain;
+            padding: 15px;
+            background-color: #fff;
+        }
+
         .project-card:hover .project-image img {
             transform: scale(1.1);
         }
 
         .project-info {
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .project-info h3 {
@@ -499,6 +521,11 @@
         .project-tag:hover {
             background-color: var(--primary-color);
             color: white;
+        }
+
+        .project-info .btn {
+            margin-top: auto;
+            align-self: flex-start;
         }
 
         /* Contact Section */
@@ -843,33 +870,48 @@
                     
                     <div class="skills-container">
                         <div class="skill-category">
-                            <h4>Languages</h4>
+                            <h4>Programming Languages</h4>
                             <ul class="skill-list">
-                                <li>C/C++</li>
+                                <li>C, C++</li>
                                 <li>Python</li>
-                                <li>JavaScript</li>
+                                <li>C# (.NET) (Foundational)</li>
+                                <li>JavaScript (Foundational)</li>
+                                <li>SQL</li>
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4>Web Technologies</h4>
+                            <h4>Web & Mobile Development</h4>
                             <ul class="skill-list">
-                                <li>HTML/CSS</li>
-                                <li>JavaScript</li>
+                                <li>.NET MAUI</li>
+                                <li>XAML</li>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Databases & Storage</h4>
+                            <ul class="skill-list">
                                 <li>SQL Server</li>
+                                <li>SQLite</li>
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4>Tools & Platforms</h4>
+                            <h4>AI & Emerging Tech</h4>
                             <ul class="skill-list">
-                                <li>Blender 3D</li>
-                                <li>Unity</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>AI/ML</h4>
-                            <ul class="skill-list">
-                                <li>AI Image/Video Generation</li>
                                 <li>Prompt Engineering</li>
+                                <li>Generative AI (Image/Video Synthesis)</li>
+                                <li>Basic Machine Learning</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Developer Tools & Platforms</h4>
+                            <ul class="skill-list">
+                                <li>Google Antigravity</li>
+                                <li>Visual Studio</li>
+                                <li>VS Code</li>
+                                <li>Blender 3D</li>
+                                <li>Unity 3D</li>
+                                <li>Git/GitHub</li>
                             </ul>
                         </div>
                     </div>
@@ -905,7 +947,7 @@
                         <h3>AISSE (Class X)</h3>
                         <h4>CBSE, HOLY CHILD SCHOOL, MORNI ROAD, PANCHKULA, HARYANA</h4>
                         <p>Subjects: English, Information Technology, Science, Maths, Social Science, Hindi</p>
-                        <p>Percentage: 93.6% (2021)</p>
+                        <p>Percentage: 94.2% (2021)</p>
                     </div>
                 </div>
             </div>
@@ -918,6 +960,28 @@
                 <h2>My Projects</h2>
             </div>
             <div class="projects-grid">
+                <!-- Sugar Tracker Project Card (Updated with local image and simplified content) -->
+                <div class="project-card">
+                    <div class="project-image logo-image">
+                        <!-- Using the provided local Feature graphic.png as image -->
+                        <img src="Feature graphic.png" alt="Sugar Tracker Feature Graphic">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sugar Tracker — Blood Sugar Monitoring App</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">.NET MAUI</span>
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">XAML</span>
+                            <span class="project-tag">SQLite</span>
+                            <span class="project-tag">Android SDK</span>
+                            <span class="project-tag">Native Canvas API</span>
+                        </div>
+                        <p style="color: #6c5ce7; font-weight: 600;">Live on Google Play Store</p>
+                        <p>Engineered and launched an offline-first health management Android application published and verified on the Google Play Store.</p>
+                        <a href="https://play.google.com/store/apps/details?id=in.testskill.sugar&pcampaignid=web_share" target="_blank" class="btn">View on Play Store</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="College Website">
@@ -931,7 +995,7 @@
                             <span class="project-tag">Team Project</span>
                         </div>
                         <p>Built a basic static website for the college as part of coursework. Collaborated with classmates to plan and structure the site.</p>
-                        <a href=https://clg-web-0zlx.onrender.com/ class="btn">View Details</a>
+                        <a href="https://clg-web-0zlx.onrender.com/" class="btn">View Details</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -947,7 +1011,7 @@
                             <span class="project-tag">Responsive Design</span>
                         </div>
                         <p>Created a personal portfolio website to highlight skills, education, and projects. Designed and developed the UI using HTML, CSS, and JavaScript.</p>
-                        <a href=https://shrishti-19.github.io/myPortfolioShrishti.github.io/ class="btn">View Details</a>
+                        <a href="https://shrishti-19.github.io/myPortfolioShrishti.github.io/" class="btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -1115,12 +1179,13 @@
 
         // Form submission
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
 
         // Animation on scroll
         window.addEventListener('scroll', function() {
@@ -1147,8 +1212,10 @@
             
             // Trigger the first section to appear
             setTimeout(() => {
-                sections[0].style.opacity = '1';
-                sections[0].style.transform = 'translateY(0)';
+                if (sections.length > 0) {
+                    sections[0].style.opacity = '1';
+                    sections[0].style.transform = 'translateY(0)';
+                }
             }, 300);
         });
     </script>
